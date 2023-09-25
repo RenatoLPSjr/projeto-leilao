@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </head>
 
@@ -42,11 +44,49 @@
         </div>
     </div>
 
-    <div class="parte2">
+    <div class="container-home-art">
+        <div class="image-container-art">
+            <img src="img/artista-beatriz.jpg" alt="Imagem">
+        </div>
+        <div class="text-container">
+            <h2>Beatriz Milhazes</h2>
+            <p>Pintora, gravadora, ilustradora e professora.
 
+                "(...) Pela primeira vez, estou pensando em voz alta que, no trabalho com a cor, faço uma ligação entre
+                vida e pintura. O carnaval - uma festa popular brasileira frenética - sempre me estimulou com seu
+                visual, atmosfera, loucura, beleza etc.
+
+                Os desfiles, com suas combinações de cores e conceitos, são muito malucos, mas por outro lado todas
+                essas coisas estão muito longe da pintura, do meu ateliê, do meu cotidiano. Ao contrário de Hélio
+                Oiticica, que também trouxe referências do carnaval para o seu trabalho, eu jamais, em nenhum momento,
+                fiz parte do mundo do samba ou do carnaval. E nunca quis fazer parte.</p>
+            <a class="btn-home" href="">Veja mais em artistas</a>
+        </div>
     </div>
 
 
+
 </body>
+
+<script>
+    $(document).ready(function() {
+        // Função para mostrar o .text-container quando for visível no viewport
+        function showTextContainer() {
+            var windowHeight = $(window).height();
+            var scroll = $(window).scrollTop();
+            var textContainer = $('.text-container');
+            
+            // Verifica se o .text-container está visível na janela de visualização
+            if (scroll + windowHeight > textContainer.offset().top) {
+                textContainer.addClass('show-text');
+            }
+        }
+
+        // Chama a função quando a página carrega e quando a janela é rolada
+        $(window).on('load scroll', function() {
+            showTextContainer();
+        });
+    });
+</script>
 
 </html>
