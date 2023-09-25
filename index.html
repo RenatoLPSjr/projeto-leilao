@@ -24,7 +24,7 @@
             <ul>
                 <li><a href="#">Principal</a></li>
                 <li><a href="#">Artistas</a></li>
-                <li><a href="#">Sobre Mim</a></li>
+                <li><a href="#">Sobre Nós</a></li>
                 <li><a href="#">Contato</a></li>
                 <li><a href="#">Leilão</a></li>
 
@@ -64,29 +64,59 @@
         </div>
     </div>
 
+    <div class="container-sobre">
+
+        <div class="text-container-sobre">
+            <h2>Sobre a Litoral Paulista Leilões</h2>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis
+                condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et
+                malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere
+                eu, lectus. Nam mattis, felis ut adipiscing."</p>
+            <a class="btn-home" href="">Veja mais sobre nós</a>
+        </div>
+
+        <div class="image-container-sobre">
+            <img src="img/cidade.jpg" alt="Imagem">
+        </div>
+    </div>
+
 
 
 </body>
 
 <script>
-    $(document).ready(function() {
-        // Função para mostrar o .text-container quando for visível no viewport
-        function showTextContainer() {
-            var windowHeight = $(window).height();
-            var scroll = $(window).scrollTop();
-            var textContainer = $('.text-container');
-            
-            // Verifica se o .text-container está visível na janela de visualização
-            if (scroll + windowHeight > textContainer.offset().top) {
-                textContainer.addClass('show-text');
-            }
+$(document).ready(function() {
+    // Função para mostrar o .text-container quando for visível no viewport
+    function showTextContainer() {
+        var windowHeight = $(window).height();
+        var scroll = $(window).scrollTop();
+        var textContainer = $('.text-container');
+        
+        // Verifica se o .text-container está visível na janela de visualização
+        if (scroll + windowHeight > textContainer.offset().top) {
+            textContainer.addClass('show-text');
         }
+    }
 
-        // Chama a função quando a página carrega e quando a janela é rolada
-        $(window).on('load scroll', function() {
-            showTextContainer();
-        });
+    // Função para mostrar o .text-container-sobre quando for visível no viewport
+    function showTextContainerSobre() {
+        var windowHeight = $(window).height();
+        var scroll = $(window).scrollTop();
+        var textContainerSobre = $('.text-container-sobre');
+
+        // Verifica se o .text-container-sobre está visível na janela de visualização
+        if (scroll + windowHeight > textContainerSobre.offset().top) {
+            textContainerSobre.addClass('show-text-sobre');
+        }
+    }
+
+    // Chama as funções quando a página carrega e quando a janela é rolada
+    $(window).on('load scroll', function() {
+        showTextContainer();
+        showTextContainerSobre();
     });
+});
+
 </script>
 
 </html>

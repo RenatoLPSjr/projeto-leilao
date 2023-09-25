@@ -136,7 +136,7 @@ li a:hover::after {
     background: rgba(128, 128, 128, 0.912);
     position: absolute;
     opacity: 0; /* Definir a opacidade inicial como 0 para escondê-lo */
-    transition: opacity 1.5s ease-in-out; /* Adicionar uma transição suave de 0.5 segundos */
+    transition: opacity 2.5s ease-in-out; /* Adicionar uma transição suave de 0.5 segundos */
     width: 40%;
     top: 120vh;
     left: 100vh;
@@ -170,3 +170,46 @@ li a:hover::after {
 }
 
 
+/* TERCEIRA PARTE DA PAGINA HOME - ARTISTAS*/
+
+.container-sobre {
+    justify-content: space-between;
+    margin: 0 auto; /* Adiciona margem automática para centralização horizontal */
+    max-width: 100%; /* Limita a largura máxima para 80% da largura do viewport */
+    align-items: center;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+}
+
+.image-container-sobre img {
+    width: 60%;
+    position: relative;
+    top: 10vh;
+    left: 85vh;
+    transition: box-shadow 1.0s ease-in-out;
+}
+
+.text-container-sobre {
+    color: white;
+    background: rgba(128, 128, 128, 0.912);
+    position: absolute;
+    left: -100%;
+    opacity: 0; /* Definir a opacidade inicial como 0 para escondê-lo */
+    transition: opacity 1.5s ease-in-out; /* Adicionar uma transição suave de 0.5 segundos */
+    width: 40%;
+    top: 220vh;
+    padding: 20px;
+    display: flex; /* Torna o .text-container um flex container */
+    flex-direction: column; /* Empilha elementos verticalmente */
+    justify-content: flex-start; /* Alinha elementos no início verticalmente */
+    align-items: flex-start; 
+    z-index: 1;
+    transition: left 2s ease, opacity 4s ease-in-out;
+
+}
+
+.show-text-sobre {
+    left: 0; /* Remove a propriedade left, fazendo o elemento deslizar para a direita */
+    opacity: 1;
+}
